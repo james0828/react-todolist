@@ -1,0 +1,207 @@
+* {
+  font-family: "LiGothic", "FangSong", Arial, serif;
+  outline: none;
+}
+
+body {
+  background: rgb(238, 112, 107);
+}
+
+.col-md-12 {
+  padding: unset;
+}
+
+.title {
+  max-width: 1000px;
+  border-bottom: 1px solid white;
+  margin: 45px;
+
+  h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: unset;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2px;
+  }
+}
+
+.todolist-container {
+  min-height: calc(80vh - 204px);
+}
+
+.task-container {
+  background: rgb(239, 126, 122);
+  margin-bottom: 15px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 45px;
+
+  .task-btn {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 25px;
+      opacity: .5;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  }
+  
+  h3 {
+    color: white;
+    margin-right: 15px;
+    overflow: auto;
+  }
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+}
+
+input[type=checkbox] + label::before {
+  content: "\2714";
+  border: 0.1em solid white;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  padding-left: 0.25em;
+  padding-bottom: 0.2em;
+  color: transparent;
+}
+
+input[type=checkbox]:checked + label::before {
+  background: white;
+  color: rgb(239, 126, 122);
+}
+
+.removed {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.add {
+  padding: 0 45px;
+
+  h3 {
+    color: white;
+  }
+
+  input {
+    width: 70%;
+    float: left;
+    height: 60px;
+    padding: 15px;
+    font-size: 21px;
+  }
+
+  button {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 25%;
+    height: 60px;
+    float: right;
+    opacity: .5;
+    position: relative;
+    transition: opacity .3s, top .2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      top: 2px;
+    }
+  }
+}
+
+.on-off-bar {
+  padding: 0 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  h5 {
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-right: 15px;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: rgb(241, 153, 151);
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(241, 153, 151);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+  background: white;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
